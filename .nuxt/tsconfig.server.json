@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "paths": {
+      "#imports": [
+        "/Users/m71/Project/us/uplbspaces-web/.nuxt/types/nitro-imports"
+      ],
+      "#paths": [
+        "/Users/m71/Project/us/uplbspaces-web/node_modules/nuxt/dist/core/runtime/nitro/paths"
+      ],
+      "~": [
+        "/Users/m71/Project/us/uplbspaces-web"
+      ],
+      "~/*": [
+        "/Users/m71/Project/us/uplbspaces-web/*"
+      ],
+      "@": [
+        "/Users/m71/Project/us/uplbspaces-web"
+      ],
+      "@/*": [
+        "/Users/m71/Project/us/uplbspaces-web/*"
+      ],
+      "~~": [
+        "/Users/m71/Project/us/uplbspaces-web"
+      ],
+      "~~/*": [
+        "/Users/m71/Project/us/uplbspaces-web/*"
+      ],
+      "@@": [
+        "/Users/m71/Project/us/uplbspaces-web"
+      ],
+      "@@/*": [
+        "/Users/m71/Project/us/uplbspaces-web/*"
+      ],
+      "assets": [
+        "/<rootDir>/assets"
+      ],
+      "public": [
+        "/Users/m71/Project/us/uplbspaces-web/public"
+      ],
+      "public/*": [
+        "/Users/m71/Project/us/uplbspaces-web/public/*"
+      ],
+      "pinia": [
+        "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia"
+      ]
+    }
+  },
+  "include": [
+    "/Users/m71/Project/us/uplbspaces-web/.nuxt/types/nitro-nuxt.d.ts",
+    "./types/nitro.d.ts",
+    "../**/*",
+    "../server/**/*"
+  ]
+}

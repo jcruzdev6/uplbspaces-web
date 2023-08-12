@@ -1,0 +1,1 @@
+import{y as i,z as s}from"./entry.652436a6.js";const c=i("page",{state:()=>({pages:null,page:null}),actions:{async fetchPages(){const a=s().public.jsonApiPath,t=await $fetch(a+"/pages");this.pages=await t.data},async fetchPage(a){const t=s().public.jsonApiPath,e=await $fetch(t+"/pages/"+a);this.page=await e.data}}});export{c as u};
