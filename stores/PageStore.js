@@ -3,7 +3,8 @@ import { defineStore } from "pinia";
 export const usePageStore = defineStore("page", {
     state: () => ({
         pages: null,
-        page: null
+        page: null,
+        faqs: null,
     }),
 
     actions: {
@@ -14,17 +15,16 @@ export const usePageStore = defineStore("page", {
             this.pages = (await results.data);
         },
         async fetchPage(id) {
-            /*let page = {};
-            if (this.pages) {
-                page = this.pages.filter((item) => {
-                    return item['id'] == id      
-                });
-            }
-            return page;*/
             const API_PATH = useRuntimeConfig().public.jsonApiPath;
             const results = await $fetch(API_PATH+'/pages/'+id);
 
             this.page = (await results.data);
         },          
+        async fetchFAQs() {
+            const API_PATH = useRuntimeConfig().public.jsonApiPath;
+            const results = await $fetch(API_PATH+'/faqs')
+            
+            this.faqs = (await results.data);
+        },
     },
 });

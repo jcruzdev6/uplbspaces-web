@@ -21,5 +21,5 @@
 
 <script setup>
 const facilityStore = useFacilityStore();
-const images = useFetchFacilityImages(facilityStore.facility.id, facilityStore.facility.facility_type_id);
+const images = useFetchImages('facility', facilityStore.facility.id, facilityStore.facility.facility_type_id);
 </script>

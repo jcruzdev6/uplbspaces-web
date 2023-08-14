@@ -4,10 +4,9 @@
         <div class="container-fluid" id="innerpage">
             <div class="container-lg" id="innerpageBody">
                 <PageHeader />
-                <div id="innerpageBodyContent">
-                    {{ pageStore.page.content }}
-                    <p>&nbsp;</p>
-                </div>
+                <PageContent v-if="pageStore.page.name.toLowerCase() != 'contact us' && pageStore.page.name.toLowerCase() != 'faqs'" />
+                <PageContact v-if="pageStore.page.name.toLowerCase() == 'contact us'" />
+                <PageFAQs v-if="pageStore.page.name.toLowerCase() == 'faqs'" />
             </div>
         </div>
     </div>
@@ -18,5 +17,6 @@ const route = useRoute();
 const pageStore = usePageStore();
 
 await pageStore.fetchPage(route.params.id);
+console.log(pageStore.page.name.toLowerCase())
 
 </script>

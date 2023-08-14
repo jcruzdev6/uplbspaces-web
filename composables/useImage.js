@@ -11,9 +11,13 @@ export default function useImage(type, id, type_id) {
             image = assets['/assets/images/facilities/' + type_id + '/' + id + '/' + id + '-1.jpg']["default"];
             break;
         case 'page':
-            assets = import.meta.glob('@/assets/images/pages/*.jpg', {eager: true});      
-            image = assets['/assets/images/pages/' + id + '.jpg']["default"];
+            assets = import.meta.glob('@/assets/images/pages/*/*.jpg', {eager: true});      
+            image = assets['/assets/images/pages/' + id + '/header.jpg']["default"];
             break;
-    }
+        case 'page_cards':
+            assets = import.meta.glob('@/assets/images/pages/*/*.jpg', {eager: true});      
+            image = assets['/assets/images/pages/' + id + '/header.jpg']["default"];
+            break;
+        }
     return image;
 }

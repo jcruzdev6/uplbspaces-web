@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
     '@vee-validate/nuxt',
+    '@vueuse/nuxt',
   ],
   imports: {
     dirs: ['stores'],
@@ -19,6 +20,7 @@ export default defineNuxtConfig({
       jsonApiUrl: process.env.API_URL,
       jsonApiPath: process.env.API_PATH,
       webUrl: process.env.WEB_URL,
+      recaptchaKey: process.env.RECAPTCHA_SITE_KEY
     } 
   },
   vite: {
@@ -31,14 +33,14 @@ export default defineNuxtConfig({
   plugins: [ 
     { src: '~/plugins/useBootstrap.client.ts', mode: 'client' }
   ],
-  /*app: {
+  app: {
     head: {
       script: [
         {
-          src: "@/assets/js/calendar.js",
+          src: "https://www.google.com/recaptcha/api.js?render="+process.env.RECAPTCHA_SITE_KEY,
           type: "text/javascript",
         },
       ],
     },
-  },*/
+  },
 })

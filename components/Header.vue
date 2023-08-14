@@ -3,8 +3,8 @@
         <div class="container-lg" id="headContent">
         <button type="button" class="toggleBtn d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-controls="offcanvasNav"><IconsBars /></button>
         <div class="mx-auto mx-lg-0 me-lg-auto">
-            <NuxtLink to="/"><img src="@/assets/images/uplbspacesDark275.png" width="165"></NuxtLink>
-            <div class="d-none d-lg-inline ms-1"><small>Your online reservation system for</small><img src="@/assets/images/upSeal40.png" class="mx-1"><small> U.P. Los Baños Facilities.</small></div>
+            <NuxtLink to="/"><img src="@/assets/images/default/uplbspacesDark275.png" width="165"></NuxtLink>
+            <div class="d-none d-lg-inline ms-1"><small>Your online booking system for</small><img src="@/assets/images/default/upSeal40.png" class="mx-1"><small> U.P. Los Baños Spaces.</small></div>
         </div>
         <div class="d-none d-lg-flex">
             <input type="text" id="headSearch" class="form-control form-control-sm rounded-start rounded-end-0" style="width:200px" placeholder="search">
