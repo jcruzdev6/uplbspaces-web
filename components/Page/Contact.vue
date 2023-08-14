@@ -51,30 +51,6 @@ import { Form, Field } from 'vee-validate';
 import * as Yup from 'yup';
 import { defineComponent } from 'vue'
 
-const { vueApp } = useNuxtApp();
-const token = ref('');
-vueApp.use(VueReCaptcha, {
-    siteKey: useRuntimeConfig().public.recaptchaKey,
-    loaderOptions: {
-    autoHideBadge: true,
-    },
-});
-
-onMounted( async () => {
-    const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
-    await recaptchaLoaded();
-});
-/*
-const recaptchaInstance = useReCaptcha()
-
-const recaptcha = async () => {
-  await recaptchaInstance?.recaptchaLoaded()
-  const token = await recaptchaInstance?.executeRecaptcha('ContactUs')
-  return token;
-}
-*/
-
-
 const pageStore = usePageStore();
 const objContact = JSON.parse(pageStore.page.content);
 
@@ -92,9 +68,27 @@ const schema = Yup.object().shape({
         //.required('Message is required')
 });
 
+/** Google Recaptcha */
+const { vueApp } = useNuxtApp();
+const token = ref('');
+vueApp.use(VueReCaptcha, {
+    siteKey: useRuntimeConfig().public.recaptchaKey,
+    loaderOptions: {
+    autoHideBadge: true,
+    },
+});
+
+onMounted( async () => {
+    const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
+    const recaptcha = async() => {
+        await recaptchaLoaded();
+        const token = await executeRecaptcha('contactus');
+    }
+});
+
 async function submitContactUs(values) {
     // get the token on your method
-    token = await executeRecaptcha('contactus');
+    //token = await executeRecaptchaFundction('contactus');
 
     const data = {
             name: values.name,
@@ -114,30 +108,4 @@ async function submitContactUs(values) {
     console.log('results:');
     console.log(res);
 }
-//onMounted(() => {
-/*    const submitContactUs = (values) => {
-        console.log('submitContactUs called');
-        grecaptcha.ready(function() {
-            grecaptcha.execute(useRuntimeConfig().public.recaptchaKey, {action: 'submit'}).then(function(token) {
-                console.log('grecaptcha.execute called');
-                sendContactUs(values, token);
-            });
-        });
-    }
-    async function sendContactUs(values, token) {
-        const data = {
-            name: values.name,
-            email: values.email,
-            phone: values.phone,
-            message: values.message,
-            token: token
-        };
-        console.log('sendContactUs called');
-        console.log(data);
-        const { res, error } = await useApiFetch(useRuntimeConfig().public.jsonApiPath + '/contactus', {
-            method: "POST",
-            body: data,
-        });
-    } */
-//});
 </script>
