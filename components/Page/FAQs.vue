@@ -19,8 +19,8 @@
                         <p class="answer">{{ faq.answer }}</p>
                     </div>
                     <div class="faqPrevNext" :id="`faq${index}PrevNext`">
-                        <div class="faqPrev" @click="showAnswer(index)"><i class="fa-solid fa-caret-left"></i> Previous</div>
-                        <div class="faqNext" @click="showAnswer(index)">Next <i class="fa-solid fa-caret-right"></i></div>
+                        <a v-show="index > 0" href="#" class="faqPrev" @click.stop="showAnswer(index, 'prev')"><IconsCaretLeft /> Previous</a>
+                        <a v-show="index == pageStore.faqs.length" href="#" class="faqNext" @click.stop="showAnswer(index, 'next')">Next <IconsCaretRight /></a>
                     </div>
                 </div>
             </div>
@@ -34,11 +34,12 @@ const pageStore = usePageStore();
 pageStore.fetchFAQs();
 const images = useFetchImages('page', pageStore.page.id);
 
-function showAnswer(index) {
+function showAnswer(index, direction='') {
+    if (direction == 'prev') index--;
+    else if(direction == 'next') index++;
+    console.log('showAnswer:'+index)
     const faqQ = document.getElementById(`faqQ${index}`);
     const faqA = document.getElementById(`faqA${index}`);
-    //const faqPrev = document.getElementById(`faq${index}PrevNext`).querySelector('.faqPrev');
-    //const faqNext = document.getElementById(`faq${index}PrevNext`).querySelector('.faqNext');
     const faqAnswerBox = document.querySelector('.faqAnswerBox');
 
     faqAnswerBox.classList.add('active');

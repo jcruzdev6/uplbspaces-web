@@ -32,15 +32,5 @@ export default defineNuxtConfig({
   ],
   plugins: [ 
     { src: '~/plugins/useBootstrap.client.ts', mode: 'client' }
-  ],
-  app: {
-    head: {
-      script: [
-        {
-          src: "https://www.google.com/recaptcha/api.js?render="+process.env.RECAPTCHA_SITE_KEY,
-          type: "text/javascript",
-        },
-      ],
-    },
-  },
+  ]
 })

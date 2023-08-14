@@ -2,7 +2,7 @@
     <div class="spacesBreadcrumbs">
         <NuxtLink to="/">Home</NuxtLink> <span><IconsCaretRight /></span> <NuxtLink to="/spaces">Spaces</NuxtLink>&nbsp;
         <span><IconsCaretRight /></span>&nbsp;
-        <span v-if="route.name == 'spaces-id'">{{ facility_type }}</span>        
+        <span v-if="route.name == 'spaces-id'">{{ type_name }}</span>        
         
         <span v-if="route.name == 'spaces-space-id'">
         <NuxtLink :to="'/spaces/'+type_id">{{ type_name }}</NuxtLink>&nbsp;

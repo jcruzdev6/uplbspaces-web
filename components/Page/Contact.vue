@@ -46,18 +46,33 @@
 </template>
 
 <script setup>
+import { VueReCaptcha, useReCaptcha } from 'vue-recaptcha-v3';
 import { Form, Field } from 'vee-validate';
 import * as Yup from 'yup';
-import { useReCaptcha } from 'vue-recaptcha-v3'
 import { defineComponent } from 'vue'
 
+const { vueApp } = useNuxtApp();
+const token = ref('');
+vueApp.use(VueReCaptcha, {
+    siteKey: useRuntimeConfig().public.recaptchaKey,
+    loaderOptions: {
+    autoHideBadge: true,
+    },
+});
+
+onMounted( async () => {
+    const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
+    await recaptchaLoaded();
+});
+/*
 const recaptchaInstance = useReCaptcha()
 
 const recaptcha = async () => {
   await recaptchaInstance?.recaptchaLoaded()
   const token = await recaptchaInstance?.executeRecaptcha('ContactUs')
-  return token
+  return token;
 }
+*/
 
 
 const pageStore = usePageStore();
@@ -79,7 +94,7 @@ const schema = Yup.object().shape({
 
 async function submitContactUs(values) {
     // get the token on your method
-    const token = await recaptcha();
+    token = await executeRecaptcha('contactus');
 
     const data = {
             name: values.name,
@@ -89,9 +104,10 @@ async function submitContactUs(values) {
             token: token
         };
     console.log('submitContactUs called');
+    console.log('token'+token);
     console.log(data);
     const API_URL = useRuntimeConfig().public.jsonApiPath + '/contactus';
-    const { res, error } = await $fetch(API_URL, {
+    const { res, error } = await useApiFetch(API_URL, {
         method: "POST",
         body: data,
     });

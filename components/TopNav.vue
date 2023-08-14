@@ -5,16 +5,20 @@
         </div>
         <nav class="container-lg d-none d-lg-flex" id="navContent">
             <ul id="navMenu" class="me-auto">
-                <li>
+                    <li>
                     <a href="#" class="navMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Spaces <IconsCaretDown 
                             class="ms-2" style="font-size: .6em;" /></a>
                     <ul class="dropdown-menu">
-                        <li v-for="(facility_type, index) in facilityTypeStore.facility_types"
-                            :key="index"><NuxtLink :to="'/spaces/'+facility_type.id" class="dropdown-item">{{ facility_type.name }}</NuxtLink></li>                        
+                        <client-only>
+                            <li v-for="(facility_type, index) in facilityTypeStore.facility_types"
+                                :key="index"><NuxtLink :to="'/spaces/'+facility_type.id" class="dropdown-item">{{ facility_type.name }}</NuxtLink></li>                        
+                        </client-only>
                     </ul>
                 </li>
-                <li v-for="(page, index) in pageStore.pages"
-                    :key="index"><NuxtLink :to="'/pages/'+page.id" class="navMenuLink">{{ page.name }}</NuxtLink></li>
+                <client-only>
+                    <li v-for="(page, index) in pageStore.pages"
+                        :key="index"><NuxtLink :to="'/pages/'+page.id" class="navMenuLink">{{ page.name }}</NuxtLink></li>
+                </client-only>
             </ul>
             <ul v-show="auth.isLoggedIn" id="navUserMenu">
                 <li class="navUserMenuItem"><NuxtLink to="/auth/mybookings" class="navUserMenuLink"><IconsFolder />&nbsp;My Bookings</NuxtLink></li>
