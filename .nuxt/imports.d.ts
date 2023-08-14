@@ -6,7 +6,6 @@ export { computedAsync, asyncComputed, computedEager, eagerComputed, computedInj
 export { injectHead, useHead, useSeoMeta, useHeadSafe, useServerHead, useServerSeoMeta, useServerHeadSafe } from '@unhead/vue';
 export { useApiFetch } from '../composables/useApiFetch';
 export { default as useCalendar } from '../composables/useCalendar';
-export { useCardSwitch } from '../composables/useCardSwitch';
 export { default as useFacilityCapacity } from '../composables/useFacilityCapacity';
 export { default as useFetchFacilityImages } from '../composables/useFetchFacilityImages';
 export { default as useFetchImages } from '../composables/useFetchImages';
