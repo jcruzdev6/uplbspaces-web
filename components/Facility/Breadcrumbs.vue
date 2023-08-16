@@ -1,6 +1,6 @@
 <template>
     <div class="spacesBreadcrumbs">
-        <NuxtLink to="/">Home</NuxtLink> <span><IconsCaretRight /></span> <NuxtLink to="/spaces">Spaces</NuxtLink>&nbsp;
+        <NuxtLink to="/">Home</NuxtLink> <span><IconsCaretRight /></span> <a href="#">Spaces</a>&nbsp;
         <span><IconsCaretRight /></span>&nbsp;
         <span v-if="route.name == 'spaces-id'">{{ type_name }}</span>        
         
