@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
     '@vee-validate/nuxt',
-    '@vueuse/nuxt',
+    //'@nuxt/image-edge',
   ],
   imports: {
     dirs: ['stores'],

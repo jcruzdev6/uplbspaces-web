@@ -4,7 +4,7 @@
             <div v-for="(image, index) in images"
                     :key="index" :class="(index == 0)?'active':''" class="carousel-item">
                 <div id="spaceImgContainer">
-                    <img :src="image">
+                    <img :src="image" />
                 </div>
             </div>
         </div>

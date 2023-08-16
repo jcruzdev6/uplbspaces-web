@@ -1,7 +1,7 @@
 <template>
     <div v-for="(image, index) in images"
         :key="index" class="pageCardPhoto" :id="'pagePhoto' + (index+1)">
-        <img :src="image">
+        <img :src="image" />
     </div>
 </template>
 <script setup>

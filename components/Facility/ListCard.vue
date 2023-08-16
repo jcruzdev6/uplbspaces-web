@@ -3,7 +3,7 @@
         <div class="spacesTileCard">
             <div class="spacesTileClip">
                 <div class="spacesTileImg">
-                    <img :src="useImage('facility', props.facility.id, props.facility.facility_type_id)">
+                    <img :src="useImage('facility', props.facility.id, props.facility.facility_type_id)" />
                     <NuxtLink :to="'/spaces/space/'+props.facility.id" class="spacesTileTint"></NuxtLink>
                 </div>
             </div>

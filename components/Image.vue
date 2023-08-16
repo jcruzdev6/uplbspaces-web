@@ -1,6 +1,6 @@
 <template>
     <span v-if="isLoading">Loading</span>
-    <img v-else :src="props.src">
+    <img v-else :src="props.src" />
 </template>
 <script setup>
 import { useImage } from '@vueuse/core'

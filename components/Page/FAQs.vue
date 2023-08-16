@@ -12,7 +12,7 @@
                 </div>
                 <div :class="index == 0 ? 'faqAnswer active' : 'faqAnswer'" :id="`faqA${index}`">
                     <div class="faqImg">
-                        <img :src="images[index]">
+                        <img :src="images[index]" />
                     </div>
                     <div class="faqQAContainer">
                         <h4 class="question">{{ faq.question }}</h4>

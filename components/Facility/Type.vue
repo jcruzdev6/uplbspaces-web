@@ -1,7 +1,7 @@
 <template>
     <div class="tileClip">
         <div class="tile">            
-            <img :src="useImage('facility_type', props.facility_type.id )">
+            <img :src="useImage('facility_type', props.facility_type.id )" />
             <NuxtLink :to="'/spaces/'+props.facility_type.id" class="tileTint">
                 <div class="tileContent">
                     <h3 class="tileTitle">{{props.facility_type.name}}</h3>

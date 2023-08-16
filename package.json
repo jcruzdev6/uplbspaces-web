@@ -20,6 +20,7 @@
     "vite": "^4.4.6"
   },
   "dependencies": {
+    "@nuxt/image-edge": "^1.0.0-rc.1-28164352.ad7c010",
     "@pinia/nuxt": "^0.4.11",
     "@popperjs/core": "^2.11.8",
     "@vee-validate/nuxt": "^4.11.1",

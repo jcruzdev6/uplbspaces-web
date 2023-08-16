@@ -1,0 +1,1 @@
+import{bF as s,bA as y}from"./entry.40a6eb38.js";const c=s("facility_type",{state:()=>({facility_types:null,facility_type:null}),actions:{async fetchFacilityTypes(){const t=y().public.jsonApiPath,i=await $fetch(t+"/facility_types");this.facility_types=i.data},async fetchFacilityType(t){const i=this.facility_types.filter(e=>e.id==t);this.facility_type=i[0]}}});export{c as u};

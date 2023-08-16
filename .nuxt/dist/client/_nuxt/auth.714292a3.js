@@ -1,0 +1,1 @@
+import{bN as t,bD as e}from"./entry.40a6eb38.js";import{u as o}from"./AuthStore.e197b3ac.js";import"./useApiFetch.2f581416.js";const f=t((r,a)=>{if(!o().isLoggedIn)return e("/signin",{replace:!0})});export{f as default};
