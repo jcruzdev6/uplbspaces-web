@@ -6,7 +6,6 @@ export { injectHead, useHead, useSeoMeta, useHeadSafe, useServerHead, useServerS
 export { useApiFetch } from '../composables/useApiFetch';
 export { default as useCalendar } from '../composables/useCalendar';
 export { default as useFacilityCapacity } from '../composables/useFacilityCapacity';
-export { default as useFetchFacilityImages } from '../composables/useFetchFacilityImages';
 export { default as useFetchImages } from '../composables/useFetchImages';
 export { default as useImage } from '../composables/useImage';
 export { default as useModalDisplay } from '../composables/useModalDisplay';

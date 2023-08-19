@@ -101,7 +101,6 @@ declare global {
   const useFacilityStore: typeof import('../../stores/FacilityStore')['useFacilityStore']
   const useFacilityTypeStore: typeof import('../../stores/FacilityTypeStore')['useFacilityTypeStore']
   const useFetch: typeof import('../../node_modules/nuxt/dist/app')['useFetch']
-  const useFetchFacilityImages: typeof import('../../composables/useFetchFacilityImages')['default']
   const useFetchImages: typeof import('../../composables/useFetchImages')['default']
   const useField: typeof import('vee-validate')['useField']
   const useFieldArray: typeof import('vee-validate')['useFieldArray']
@@ -269,7 +268,6 @@ declare module 'vue' {
     readonly useFacilityStore: UnwrapRef<typeof import('../../stores/FacilityStore')['useFacilityStore']>
     readonly useFacilityTypeStore: UnwrapRef<typeof import('../../stores/FacilityTypeStore')['useFacilityTypeStore']>
     readonly useFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useFetch']>
-    readonly useFetchFacilityImages: UnwrapRef<typeof import('../../composables/useFetchFacilityImages')['default']>
     readonly useFetchImages: UnwrapRef<typeof import('../../composables/useFetchImages')['default']>
     readonly useField: UnwrapRef<typeof import('vee-validate')['useField']>
     readonly useFieldArray: UnwrapRef<typeof import('vee-validate')['useFieldArray']>
@@ -431,7 +429,6 @@ declare module '@vue/runtime-core' {
     readonly useFacilityStore: UnwrapRef<typeof import('../../stores/FacilityStore')['useFacilityStore']>
     readonly useFacilityTypeStore: UnwrapRef<typeof import('../../stores/FacilityTypeStore')['useFacilityTypeStore']>
     readonly useFetch: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app')['useFetch']>
-    readonly useFetchFacilityImages: UnwrapRef<typeof import('../../composables/useFetchFacilityImages')['default']>
     readonly useFetchImages: UnwrapRef<typeof import('../../composables/useFetchImages')['default']>
     readonly useField: UnwrapRef<typeof import('vee-validate')['useField']>
     readonly useFieldArray: UnwrapRef<typeof import('vee-validate')['useFieldArray']>
