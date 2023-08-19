@@ -20,17 +20,17 @@
                         <div class="row2">{{ props.facility.available_days_grp }},<br>{{ props.facility.available_hrs }}</div>
                         <div class="row1 label">U.P. Rate:</div>
                         <div class="row1">
-                            <span v-for="rate in props.facility.facility_rates">
-                                <div v-if="rate.up_rate" :key="index">
-                               ₱{{ currency.format(rate.up_rate) + ' per ' + rate.type }}<span v-if="props.facility.facility_rates.length > 1"><br><small v-show="rate.with_aircon"> (with aircon)</small><small v-show="!rate.with_aircon"> (w/o aircon)</small></span>
+                            <span v-for="(rate, index) in props.facility.facility_rates" :key="index" >
+                                <div v-if="index == 0" :key="index">
+                                ₱{{ currency.format(rate.up_rate) + ' per ' + rate.type }}
                                 </div>
                             </span>
                         </div>
                         <div class="row2 label">Non-U.P. Rate:</div>
                         <div class="row2">
-                            <span v-for="rate in props.facility.facility_rates" :key="index">
-                                <div v-if="rate.nonup_rate">
-                                ₱{{ currency.format(rate.nonup_rate) + ' per ' + rate.type }}<span v-if="props.facility.facility_rates.length > 1"><br><small v-show="rate.with_aircon"> (with aircon)</small><small v-show="!rate.with_aircon"> (w/o aircon)</small></span>
+                            <span v-for="(rate, index) in props.facility.facility_rates" :key="index">
+                                <div v-if="index == 0">
+                                ₱{{ currency.format(rate.nonup_rate) + ' per ' + rate.type }}
                                 </div>
                             </span>
                         </div>
