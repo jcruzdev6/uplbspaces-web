@@ -16,8 +16,8 @@
                     </ul>
                 </li>
                 <client-only>
-                    <li v-for="(page, index) in pageStore.pages"
-                        :key="index"><NuxtLink :to="'/pages/'+page.id" class="navMenuLink">{{ page.name }}</NuxtLink></li>
+                    <li v-for="(nav, index) in pageStore.navs"
+                        :key="index"><NuxtLink :to="'/pages/'+nav.id" class="navMenuLink">{{ nav.name }}</NuxtLink></li>
                 </client-only>
             </ul>
             <ul v-show="auth.isLoggedIn" id="navUserMenu">

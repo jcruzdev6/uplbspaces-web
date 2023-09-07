@@ -18,14 +18,15 @@
           <Field type="password" name="password" id="modalSignupForm-password" class="form-control form-control-sm rounded" placeholder="password" />
           <div class="msgError">{{errors.password}}</div>
 
-          <label for="modalSignupForm-password2">Re-enter password</label>
+          <label for="modalSignupForm-password2">Confirm password</label>
           <Field type="password" name="password_confirmation" id="modalSignupForm-password2" class="form-control form-control-sm rounded" placeholder="confirm password" />
           <div class="msgError">{{errors.password_confirmation}}</div>
   
           <div class="d-flex" style="align-items: center;">
-            <input class="form-check-input me-1" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">Agree to <a href="terms.html">Terms &amp; Conditions</a></label>
+            <Field class="form-check-input me-1" type="checkbox" value="true" name="agree" id="flexCheckDefault" />
+            <label class="form-check-label" for="flexCheckDefault">Agree to <NuxtLink @click="useModalDisplay('modalSignup');" to="/pages/5">Terms &amp; Conditions</NuxtLink></label>
           </div>
+          <div class="msgError">{{errors.agree}}</div>
   
           <div class="d-grid">
             <button type="submit" class="btn btn-success btn-sm mt-2 mb-2 rounded">Sign Up </button>
@@ -62,13 +63,21 @@ const schema = Yup.object().shape({
     password: Yup.string()
         .min(8, 'Password must be at least 8 characters')
         .required('Password is required'),
+    password_confirmation: Yup.string()
+        .min(8, 'Password must be at least 8 characters')
+        .required('Confirm Password is required')
+        .oneOf([Yup.ref('password')], 'Passwords do not match'),
+    agree: Yup.bool()
+        .required('Accept Terms & Conditions is required')
 });
 
 
 const handleRegister = async (values) => {
-  const { data, error } = await auth.register(form.value);
+  const { data, error } = await auth.signup(values);
   if (!error.value) {
     console.log('login successful')
+    message.value = '';
+    useModalDisplay('modalSignup');
     navigateTo("/");
   } else {
     message.value = error.value.data.message;
