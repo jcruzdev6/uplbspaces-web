@@ -39,7 +39,13 @@
             <button type="button" class="socialBtn"><div><img src="/images/facebook-logo.png" width="30" height="30" class="me-3">Continue with Facebook</div></button>
             <button type="button" class="socialBtn"><div><img src="/images/google-logo.png" width="27" height="27" class="me-3">Continue with Google</div></button>
           </div>
-
+        </div>
+        <div v-if="loading" class="modalContainer">
+          <div class="d-flex justify-content-center">
+            <div class="spinner-border text-danger" role="status">
+              <span class="sr-only"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -55,6 +61,7 @@ import * as Yup from 'yup';
 //const { $bootstrap } = useNuxtApp()
 const auth = useAuthStore();
 const message = ref("");
+const loading = ref(true);
 
 const schema = Yup.object().shape({
     email: Yup.string()
@@ -73,8 +80,10 @@ const schema = Yup.object().shape({
 
 
 const handleRegister = async (values) => {
+  loading.value = true;
   const { data, error } = await auth.signup(values);
   if (!error.value) {
+    loading.value = false;
     console.log('login successful')
     message.value = '';
     useModalDisplay('modalSignup');
