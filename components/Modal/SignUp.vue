@@ -61,7 +61,7 @@ import * as Yup from 'yup';
 //const { $bootstrap } = useNuxtApp()
 const auth = useAuthStore();
 const message = ref("");
-const loading = ref(true);
+const loading = ref(false);
 
 const schema = Yup.object().shape({
     email: Yup.string()
