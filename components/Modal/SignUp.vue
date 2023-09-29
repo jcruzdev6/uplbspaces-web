@@ -40,12 +40,19 @@
             <button type="button" class="socialBtn"><div><img src="/images/google-logo.png" width="27" height="27" class="me-3">Continue with Google</div></button>
           </div>
         </div>
-        <div v-if="loading" class="modalContainer">
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border text-danger" role="status">
-              <span class="sr-only"></span>
-            </div>
+        <div v-if="loading" id="loading" class="loading">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
           </div>
+          <div class="ms-3">Loading...</div>
+        </div>
+        <div v-if="successful" id="loading" class="modalSuccess">
+          <div role="status">
+            <h1 class="text-success">Signup successful!</h1>
+            A welcome email has been sent to you. Kindly click the verification link to confirm your registration.
+            <div><button data-bs-dismiss="modal" class="toggleBtnDark">Close this window</button></div>
+          </div>
+         
         </div>
       </div>
     </div>
@@ -62,6 +69,7 @@ import * as Yup from 'yup';
 const auth = useAuthStore();
 const message = ref("");
 const loading = ref(false);
+const successful = ref(false);
 
 const schema = Yup.object().shape({
     email: Yup.string()
@@ -84,10 +92,9 @@ const handleRegister = async (values) => {
   const { data, error } = await auth.signup(values);
   if (!error.value) {
     loading.value = false;
-    console.log('login successful')
-    message.value = '';
-    useModalDisplay('modalSignup');
-    navigateTo("/");
+    successful.value = true;
+    //useModalDisplay('modalSignup');
+    //navigateTo("/");
   } else {
     message.value = error.value.data.message;
   }

@@ -128,7 +128,12 @@ const _inlineRuntimeConfig = {
     "jsonApiUrl": "http://localhost:8000",
     "jsonApiPath": "http://localhost:8000/api",
     "webUrl": "http://localhost:3000",
-    "recaptchaKey": "6LfB7aEnAAAAAHv_vhCh98eXDKxu7nYBentwNlfq"
+    "recaptchaKey": "6LfB7aEnAAAAAHv_vhCh98eXDKxu7nYBentwNlfq",
+    "persistedState": {
+      "storage": "cookies",
+      "debug": false,
+      "cookieOptions": {}
+    }
   }
 };
 const ENV_PREFIX = "NITRO_";

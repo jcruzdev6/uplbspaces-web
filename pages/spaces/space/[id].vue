@@ -20,7 +20,7 @@
               <FacilityDetails />
             </div>
           </div>
-          <div class="col-lg-4 p-0" id="spaceBodyRightCol">
+          <div class="col-lg-4 p-0" id="spaceBodyRightCol">            
             <FacilityBookingPageBookNow />
           </div>
         </div>

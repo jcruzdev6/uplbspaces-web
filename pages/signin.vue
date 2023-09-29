@@ -10,11 +10,11 @@
                 <h3 class="modalTitle" id="modalSigninLabel">Sign In</h3>
               </div>
               <div class="msgError">{{ message }}</div>
-              <label for="modalSigninForm-username">Enter your email</label>
-              <Field name="email" type="email" id="modalSigninForm-username" :class="{ 'is-invalid': errors.email }" class="form-control form-control-sm rounded" placeholder="email" />
+              <label for="pageSigninForm-username">Enter your email</label>
+              <Field name="email" type="email" id="pageSigninForm-username" :class="{ 'is-invalid': errors.email }" class="form-control form-control-sm rounded" placeholder="email" />
               <div class="msgError">{{errors.email}}</div>
-              <label for="modalSigninForm-password">Enter your password</label>
-              <Field name="password" type="password" id="modalSigninForm-password" :class="{ 'is-invalid': errors.email }" class="form-control form-control-sm rounded" placeholder="password" />
+              <label for="pageSigninForm-password">Enter your password</label>
+              <Field name="password" type="password" id="pageSigninForm-password" :class="{ 'is-invalid': errors.email }" class="form-control form-control-sm rounded" placeholder="password" />
               <div class="msgError">{{errors.password}}</div>
               <div class="d-flex">
                 <a href="#" data-bs-target="#modalForgot" data-bs-toggle="modal" class="ms-auto my-1">Forgot Password?</a>

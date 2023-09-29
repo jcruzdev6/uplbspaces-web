@@ -186,12 +186,12 @@ continueBookingBtn.addEventListener("click", () => {
   bookingsCont.dataset.status="show";
 })
 finishBookingBtn.addEventListener("click", () => {
-  alert("confirmation");
+  //alert("confirmation");
   bookingsCont.dataset.status="hide";
 })
 finishBookingBtn2.addEventListener("click", () => {
   bookingsCont.dataset.status="hide";
-  alert("confirmation");
+  //alert("confirmation");
 })
 addDateBtn.addEventListener("click", () => {
   bookingsCont.dataset.status="hide";

@@ -25,7 +25,7 @@
                 <li style="width: 1px;"></li>
                 <li class="navUserMenuItem"><NuxtLink to="/auth/myaccount" class="navUserMenuLink"><IconsImagePortrait />&nbsp;My Account</NuxtLink></li>
                 <li style="width: 1px;"></li>
-                <li class="navUserMenuItem"><button @click="handleLogout" class="navUserMenuLink"><IconsSquareXMark />&nbsp;Sign Out</button></li>
+                <li class="navUserMenuItem"><NuxtLink @click="handleLogout" class="navUserMenuLink"><IconsSquareXMark />&nbsp;Sign Out</NuxtLink></li>
             </ul>
             <a v-show="!auth.isLoggedIn" href="#" class="navMenuLink" data-bs-toggle="modal" data-bs-target="#modalSignin">Sign In <IconsCircleUser class="fs-5 ms-1" /></a>
             <a v-show="!auth.isLoggedIn" href="#" class="navUserMenuLink" data-bs-toggle="modal" data-bs-target="#modalSignup">Sign Up</a>

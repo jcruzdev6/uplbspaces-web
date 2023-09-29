@@ -63,8 +63,8 @@
   --gridOneHeadingFontFamily: var(--headingFont);
   --gridOneHeadingFontColor: black;
 
-  --gridOneFormLabelFontFamily: var(--bodyFont);
-  --gridOneFormLabelFontSize: 14px;
+  --gridOneFormLabelFontFamily: var(--headingFont);
+  --gridOneFormLabelFontSize: 16px;
   --gridOneFormLabelFontColor: black;
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* HOMEPAGE TILES                                                                                                                                                                  */
@@ -105,8 +105,8 @@
   --offcanvasTitleFontColor:white;
   --offcanvasTitleFontSize:22px;
 
-  --offcanvasFormLabelFontSize:14px;
-  --offcanvasFormLabelFontFamily: var(--bodyFont);
+  --offcanvasFormLabelFontSize:16px;
+  --offcanvasFormLabelFontFamily: var(--headingFont);
   --offcanvasFormLabelFontColor: white;
 
   /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -131,8 +131,8 @@
 /* CALENDAR                                                                                                                                                                */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
   --vacantColor: white;
-  --partialColor: rgb(227, 227, 227);
-  --fullColor: rgb(182, 36, 36);
+  --partialColor: rgb(216, 216, 216);
+  --fullColor: rgb(52, 52, 52);
   --closedColor:rgb(111, 111, 111);
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -211,7 +211,7 @@ h1,h2,h3,h4,h5,h6 {
   margin: 0;
   padding: 0;
 }
-.form-control:focus, .btn:focus, button:focus, input:focus, select:focus{
+.form-control:focus, .btn:focus, button:focus {
   outline: 3px solid rgba(255,255,255,.3);
   border-radius: 2px;
   border-color: rgba(0, 0, 0, 0);
@@ -228,7 +228,7 @@ small{
 }
 button {
   font-family: var(--headingFont) !important;
-  font-size: 16px;
+  font-size: 18px !important;
 }
 .toggleBtn {
   border: none;
@@ -300,9 +300,7 @@ input::placeholder {
   color: white;
 }
 
-#headSearch {
-  font-size: 12px !important;
-}
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* NAV                                                                                                                                                                  */
@@ -711,7 +709,7 @@ button.spacesTileBtn {
 .msgError {
   color: red;
   font-size: 14px;
-  font-weight: normal;
+  font-weight: 600;
   margin-top: 5px;
 }
 
@@ -844,41 +842,6 @@ button.spacesTileBtn {
   display: block;
   margin-bottom: 5px;
 }
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-/*  ERROR PAGE - added by MJ for error pages                                                                                                                                                            */
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-#errorPageContent {
-  padding: 0px;
-  margin: 50px 20px;
-  min-height: 600px;
-  margin-bottom: 50px;
-  font-family: var(--bodyFont);
-  color: #333;
-  font-size: 12px;
-  text-align: center;
-}
-#errorPageContent h1 {
-  margin-bottom: 15px;
-  font-size:4rem;
-  color: var(--upMaroon);
-}
-#errorPageContent h2 {
-  margin-bottom: 10px;
-  font-size:2.5rem;
-  color: var(--upMaroon);
-}
-
-#errorPageContent p{
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #333;
-}
-#errorPageContent a {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /*  FOR ABOUT                                                                                                                                                                 */
@@ -1055,178 +1018,6 @@ button.spacesTileBtn {
   margin-inline-start: auto;
 }
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-/*  SEARCH                                                                                                                                                                 */
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-#searchPageContent{
-  padding: 0px;
-  margin: 0;
-  min-height: 600px;
-  margin-bottom: 50px;
-  font-family: var(--bodyFont);
-  color: #333;
-  font-size: 12px;
-}
-#searchPageContent input,
-#searchPageContent select {
-  border-radius: 5px;
-  border: 1px solid #ccc;  
-  height: 30px;
-  color: #333;
-  font-size: 12px;
-  padding: 0 8px;
-}
-#searchPageContent button{
-  background-color: var(--successGreen);
-  border: none;
-  box-shadow: none;
-  border: 1px solid var(--successGreen);
-  color: white;
-  font-size: 14px;
-  border-radius: 5px;
-  height: 30px;
-}
-
-.searchPageHead {
-  font-family: var(--headingFont);
-  font-size: 24px;
-  color: var(--upGreen) !important;
-  padding: 5px 8px;
-}
-.searchResults {
-  margin-top: 20px;
-}
-.searchResultsCount {
-  font-family: var(--bodyFont);
-  font-size:16px;
-  font-weight: normal !important;
-  padding-bottom: 5px;
-}
-.searchTermsList {
-  font-family: var(--bodyFont);
-  font-size:12px;
-  font-weight: normal !important;
-  padding-bottom: 5px;
-}
-.searchTerm {
-  padding:2px 10px;
-  margin-right:5px;
-  background-color: #D6D6D6;
-}
-a.searchTermDelete {
-  border-radius: 50%;
-  padding:0px 6px;
-  background-color: #eaeaea;
-  cursor: pointer;
-}
-.searchPageMainKeywords {
-  background-color: #f2f2f2;
-  margin: 0;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.inputGroup {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.inputGroup label
-{
-  font-size: 12px;
-  margin-right: 5px;
-  font-weight: 400;
-  width: 120px;
-}
-.inputGroup select
-{
-  width: 100%;
-}
-.inputGroup .inputsearchfield {
-  border-top-right-radius: 5px !important;
-  border-bottom-right-radius: 5px !important;
-  border-top-left-radius: 5px !important;
-  border-bottom-left-radius: 5px !important;
-  border-right: 1px solid #ccc !important;
-  border-left: 1px solid #ccc !important;
-  border-top: 1px solid #ccc !important;
-  border-bottom: 1px solid #ccc !important;
-  width: 100%;
-  height: 30px;
-}
-.inputGroup .inputsearchbtn {
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-  border-top-right-radius: 5px !important;
-  border-bottom-right-radius: 5px !important;
-  border-left: none !important;
-  border-right: 1px solid #ccc !important;
-  border-top: 1px solid #ccc !important;
-  border-bottom: 1px solid #ccc !important;
-  background-color: white !important;
-  color: #333 !important;
-  height: 30px;
-  font-size: 12px;
-  width: 10%;
-  text-align: end;
-}
-.searchpage-date {
-  width: 45%;
-}
-.searchpage-to {
-  width: 10%;
-  text-align: center;
-}
-#searchpage-submit {
-  width: 100%;
-}
-.searchPageResults {
-  font-size: 14px;
-  padding: 10px 10px 10px 10px;
-}
-.searchPageMainKeywords > form {
-  min-width:100%;
-}
-.searchPageRow {
-  padding: 10px 0px 10px 10px;
-}
-.searchPageResults > div:nth-child(odd){
-  background-color: #f2f2f2;
-}
-
-a.searchPageResult {
- text-decoration: none;
- cursor: pointer;
- display: flex;
-}
-.searchPageResultTitle {
-  color: var(--upGreen);
-  font-size: 20px;
-  display: block;
-}
-.searchPageResultLoc {
-  color: var(--mainFontColor);
-  padding-bottom: 5px;
-  font-size: 12px;
-  display: block;
-}
-.searchPageResultAvail {
-  color: var(--upGreen);
-  font-size: 14px;
-  display: block;
-}
-.searchPageResultRate {
-  color: var(--upGreen);
-  font-size: 14px;
-  display: block;
-}
-.searchPageResultThumbail {
-  width: 150px;
-  margin-right: 20px;
-  border: 5px solid #fff;
-  box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, .04);
-
-}
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /*  FOR ACCOUNT                                                                                                                                                                 */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -1272,13 +1063,13 @@ a.searchPageResult {
   padding: 5px 8px;
 }
 /* Added by Jane */
-/*.accountsPageBlockRow > input, select {
+.accountsPageBlockRow > input, select {
   max-width: 350px;
 }
 .accountsPageBlockRowSpan  button {
   min-width: 150px;
   font-size:14px;
-}*/
+}
 
 
 .profileSquare {
@@ -1301,18 +1092,6 @@ a.searchPageResult {
   color: var(--upGreen);
   margin-bottom: 5px;
 
-}
-.accountIDContainer {
-  width: 250px;
-  height: 150px;
-  border: 2px solid var(--upGreen);
-  background-color: #f2f2f2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.accountIDContainer i{
-  font-size: 30px;
 }
 /* .accountNav {
   margin: 0;
@@ -1401,7 +1180,7 @@ a.searchPageResult {
   display: grid;
   grid-template-columns: auto 80px;
   color: #333 !important;
-  align-items: flex-start; /* Jane - added "flex-" due to Vite warning */
+  align-items: start;
   padding: 5px 8px;
 }
 .bookingsPageTableHead > div{
@@ -1663,15 +1442,6 @@ button.bookingsPageActionBtn:hover {
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-#customSelectBookings {
-  width: 175px !important;
-}
-#customSelectCategories{
-  width: 220px !important;
-}
-#customSelectCapacity {
-  width:110px !important;
-}
 
 #selectBookingsLabel {
   margin-right: 5px;
@@ -1682,24 +1452,22 @@ button.bookingsPageActionBtn:hover {
 .customSelect {
   position: relative;
   border: none !important;
-  width:200px;
-  height: 30px;
+  width:175px;
+  height: 25px;
   padding: 0;
 }
 .customSelectSelected {
   position: absolute;
   display: flex;
-  align-items: start;
+  align-items: center;
   background-color: white;
   border: 1px solid #ccc !important;
   border-radius: 5px;
-  padding: 6px 7px;
+  padding: 3px 7px;
   width: inherit;
   cursor: pointer;
   font-weight: 400;
   font-size: 12px !important;
-  height: 30px;
-  overflow: hidden;
 }
 .customSelectDropdown {
   position: absolute;
@@ -1711,7 +1479,7 @@ button.bookingsPageActionBtn:hover {
   padding: 2px;
 }
 .customSelectDropdown > div {
-  padding: 4px 5px;
+  padding: 3px 5px;
   cursor: pointer;
   margin-bottom: 1px;
   font-weight: 400;
@@ -1732,7 +1500,6 @@ button.bookingsPageActionBtn:hover {
   display: block;
   margin-inline-start: auto;
   margin-right: 3px;
-  margin-top: 6px;
 }
 #selectBookingListForm {
   display: flex;
@@ -1862,8 +1629,15 @@ button.bookingsPageActionBtn:hover {
   font-weight: 500;
 }
 .faqPrev {
+  /* visibility: hidden; */
+}
+.faqPrevNextHide {
   visibility: hidden;
 }
+.faqPrevNextShow {
+  visibility: visible;
+}
+
 .faqNext {
   margin-inline-start: auto;
 }
@@ -2520,12 +2294,7 @@ a.sideUserMenuBtn i.fa-solid, .sideUserMenuBtn i.fa-regular {
   align-items: center;
 }
 
-.centerText {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px 0;
-}
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /*  SMALL SCREEN     */
@@ -2790,19 +2559,6 @@ a.sideUserMenuBtn i.fa-solid, .sideUserMenuBtn i.fa-regular {
   #bookingsPageBtnEdit {
     color: var(--successGreen);
   }  
-  .searchPageMainKeywords {
-    padding: 10px 10px 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .searchPageMainKeywords > form {
-    min-width:100%;
-  }
-  .searchPageResults {
-    /* padding: 10px 200px 10px 10px; */
-    padding: 10px 10px 10px 10px;
-  }
 
 }
 
@@ -3015,19 +2771,6 @@ a.sideUserMenuBtn i.fa-solid, .sideUserMenuBtn i.fa-regular {
   {
     font-size: 12px !important;
   }
-  .searchPageMainKeywords {
-    padding: 10px 10px 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .searchPageMainKeywords > form {
-    min-width:80%;
-  }
-  .searchPageResults {
-    /*padding: 10px 240px 10px 10px;*/
-    padding: 10px 10px 10px 10px;
-  }
 
 
 
@@ -3119,19 +2862,7 @@ a.sideUserMenuBtn i.fa-solid, .sideUserMenuBtn i.fa-regular {
     font-size: 16px !important;
   }
   
-  .searchPageMainKeywords {
-    padding: 10px 10px 10px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .searchPageMainKeywords > form {
-    min-width:70%;
-  }
-  .searchPageResults {
-    /* padding: 10px 200px 10px 10px; */
-    padding: 10px 10px 10px 10px;
-  }
+ 
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -3188,52 +2919,5 @@ a.sideUserMenuBtn i.fa-solid, .sideUserMenuBtn i.fa-regular {
     padding: 0 100px 0 20px;
   }
 
-  /** Jane - added for vacancy indicators */  
-  .l-vacant {
-    color:var(--vacantColor);
-  }
-  .l-partial {
-    color:var(--partialColor);
-  }
-  .l-full {
-    color:var(--fullColor);
-  }
 
-  /** jane - added for loading */
-  .loading {
-    position: absolute;
-    top: auto;
-    right: auto;
-    background-color: rgba(255,255,255,.9);
-    height: 600px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-  }
-  .modalSuccess {
-    position: absolute;
-    right: auto;
-    background-color: rgba(255,255,255,1);
-    height: 600px;
-    width: 100%;
-    display: flex;
-    align-items:start;
-    justify-content: center;
-    vertical-align: top;
-    border-radius: 10px;
-  }
-  .modalSuccess h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .modalSuccess > div {
-    padding:40px 30px;
-    text-align: center;
-  }
-  .modalSuccess button {
-    font-size:18px;
-    color: var(--upMaroon)
-  }
 }

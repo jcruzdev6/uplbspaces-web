@@ -17,17 +17,17 @@
         <div id="timeslotsList">
           <form id="selectTimeList">
             <div v-for="(time, index) in times" :key="index" class="selectTimeItem">
-              <input type="checkbox" :id="'selectTime-time'+index" :value="time">
-              <label for="selectTime-time1">
+              <input type="checkbox" v-bind="selectedTime" :id="'selectTime-time'+index" :value="time">
+              <label :for="'selectTime-time'+index">
                 {{ time }}
               </label>
-              <span class="selectTimeItemCheck"><i class="fa-solid fa-check"></i></span>
+              <span class="selectTimeItemCheck"><IconsCheck /></span>
             </div>
           </form>
         </div>
       </div>
       <div class="calFoot">
-        <button type="submit" id="continueBookingBtn" class="calBtn">Continue Booking</button>
+        <button type="submit" @click="addBooking" id="continueBookingBtn" class="calBtn">Continue Booking</button>
       </div>
     </div>
 </template>
@@ -35,6 +35,20 @@
 <script setup>
 const route = useRoute();
 const facilityStore = useFacilityStore();
+const bookingStore = useBookingStore();
+let selectedTime = [];
 
-const times = useTimeSelection(facilityStore.facility.available_hrs);
+let facility = computed(() => facilityStore.activeFacility);
+let facilityBookings = computed(() => bookingStore.activeFacilityBookings);
+
+const availHrs = (facilityStore.facility) ? facilityStore.facility.available_hrs : '8:00AM - 5:00PM';
+const times = useTimeSelection(availHrs);
+
+function addBooking() {
+  console.log('selected time:')
+  console.log(selectedTime)
+  let bookingCart= [];
+  bookingCart[facility.id] = selectedTime;
+
+}
 </script>

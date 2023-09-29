@@ -3,7 +3,8 @@ import { defineStore } from "pinia";
 export const useFacilityStore = defineStore("facility", {
     state: () => ({
         facilities: null,
-        facility: null
+        facility: null,
+        activeFacility: null
     }),
     getters: {
         rates(state) {
@@ -24,7 +25,7 @@ export const useFacilityStore = defineStore("facility", {
                 else return [];
             }
             return '';
-        }
+        }   
     },
     actions: {
         async fetchFacilitiesByType(type_id) {
@@ -38,6 +39,13 @@ export const useFacilityStore = defineStore("facility", {
             const results = await $fetch(API_PATH+'/facilities/'+id)
             
             this.facility = results.data;
+            this.activeFacility = results.data;
         },      
+        setActiveFacility(facility_id) {
+            console.log('setActiveFacility called.')
+            const facility = this.facilities.find((facility) => facility.id === facility_id)
+            console.log(facility);
+            this.activeFacility = facility;
+        }
     },
 });

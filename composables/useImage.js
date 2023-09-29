@@ -10,7 +10,7 @@ export default function useImage(type, id, type_id) {
             break;
         case 'facility':
             assets = import.meta.glob('@/assets/images/facilities/*/*/*.jpg', {eager: true});      
-            console.log('/assets/images/facilities/' + type_id + '/' + id + '/' + id + '-1.jpg');
+            //console.log('/assets/images/facilities/' + type_id + '/' + id + '/' + id + '-1.jpg');
             //handle null value 
             if (assets['/assets/images/facilities/' + type_id + '/' + id + '/' + id + '-1.jpg'])
                 image = assets['/assets/images/facilities/' + type_id + '/' + id + '/' + id + '-1.jpg']["default"];

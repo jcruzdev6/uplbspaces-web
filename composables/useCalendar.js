@@ -1,4 +1,9 @@
-export default function useCalendar() {
+export default function useCalendar(partial, full) {
+    console.log('useCalendar called:');
+    console.log('partial:');
+    console.log(partial);
+    console.log('full:');
+    console.log(full);
     onMounted(() => {
         let date = new Date();
         let year = date.getFullYear();
@@ -43,21 +48,16 @@ export default function useCalendar() {
         "Friday",
         "Saturday"
         ];
-        const partialDates = [
-        "Aug-4-2023",
-        "Aug-7-2023",
-        "Aug-21-2023",
-        "Aug-28-2023",
-        "Aug-31-2023"
-        ];
-        const fullDates = [
+        const partialDates = partial;
+        const fullDates = full;
+        /*[
         "Aug-11-2023",
         "Aug-17-2023",
         "Aug-10-2023",
         "Aug-14-2023",
         "Aug-24-2023",
         "Aug-25-2023",
-        ];
+        ];*/
 
         const makeCalendar = () => {
         dayIds.length = 0; // reset array
@@ -189,12 +189,12 @@ export default function useCalendar() {
         bookings2Cont.style.display="block";
         })
         finishBookingBtn.addEventListener("click", () => {
-        alert("confirmation");
+        //alert("confirmation");
         bookingsCont.dataset.status="hide";
         })
         finishBookingBtn2.addEventListener("click", () => {
         bookingsCont.dataset.status="hide";
-        alert("confirmation");
+        //alert("confirmation");
         })
         addDateBtn.addEventListener("click", () => {
         bookingsCont.dataset.status="hide";

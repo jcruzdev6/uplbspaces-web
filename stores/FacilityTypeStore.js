@@ -5,7 +5,11 @@ export const useFacilityTypeStore = defineStore("facility_type", {
         facility_types: null,
         facility_type: null
     }),
-
+    getters: {
+        getFacilityTypeById: (state) => {
+          return (id) => state.facility_types.find((facility_type) => facility_type.id === id)
+        },
+      },    
     actions: {
         async fetchFacilityTypes() {
             const API_PATH = useRuntimeConfig().public.jsonApiPath;
@@ -18,6 +22,6 @@ export const useFacilityTypeStore = defineStore("facility_type", {
                 return item['id'] == id      
             });
             this.facility_type = facility_type[0];
-        },     
+        }
     },
 });

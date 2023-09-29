@@ -9,7 +9,7 @@
             </div>
             <div class="spacesTileDescriptionBox">
                 <div class="spacesTileTitleClip">
-                    <h4 class="spacesTileTitle"><a href="ncas.html">{{ props.facility.name }}</a></h4>
+                    <h4 class="spacesTileTitle"><NuxtLink :to="'/spaces/space/'+props.facility.id">{{ props.facility.name }}</NuxtLink></h4>
                 </div>
                 <div class="spacesTileText">
                     <address>{{ props.facility.address }}</address>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="spacesTileBtnContainer">
                     <button type="button" class="btn btn-success btn-sm rounded-3 spacesTileBtn" data-bs-toggle="modal"
-                        data-bs-target="#modalBookNow" aria-controls="modalBookNow">Book Now</button>
+                        data-bs-target="#modalBookNow" data-facilityid="props.facility.id" @click="getFacilityBookings(props.facility.id)" aria-controls="modalBookNow">Book Now</button>
                 </div>
             </div>
         </div>
@@ -52,5 +52,22 @@ const props = defineProps({
         type: Object,
     },
 });
+const bookingStore = useBookingStore();
+const facilityStore = useFacilityStore();
+
 console.log(props.facility.facility_rates[0])
+
+const getFacilityBookings = async (facilityId) => {
+    console.log('getFacilityBookings called. facilityId:'+facilityId)
+    await facilityStore.fetchFacility(facilityId)
+    await facilityStore.setActiveFacility(facilityId);
+    await bookingStore.fetchAllBookingsByFacility(facilityId);
+    
+    let facilityBookings = computed(() => bookingStore.activeFacilityBookings);
+    console.log('facilityBookings:')
+    console.log(facilityBookings)
+
+    useBookingDateVacancy(facilityStore.activeFacility, bookingStore.activeFacilityBookings)
+}
+
 </script>

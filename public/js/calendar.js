@@ -187,12 +187,12 @@ continueBookingBtn.addEventListener("click", () => {
   bookings2Cont.style.display="block";
 })
 finishBookingBtn.addEventListener("click", () => {
-  alert("confirmation");
+  //alert("confirmation");
   bookingsCont.dataset.status="hide";
 })
 finishBookingBtn2.addEventListener("click", () => {
   bookingsCont.dataset.status="hide";
-  alert("confirmation");
+  //alert("confirmation");
 })
 addDateBtn.addEventListener("click", () => {
   bookingsCont.dataset.status="hide";
